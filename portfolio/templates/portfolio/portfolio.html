@@ -1,0 +1,148 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero bg-light text-center py-5">
+    <h1 class="display-4">Welcome to My Portfolio</h1>
+    <p class="lead">Showcasing my best work and projects.</p>
+    <a href="#projects" class="btn btn-primary btn-lg">View My Projects</a>
+</div>
+
+<!-- About Section -->
+<section class="about-section my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'images/my_photo.jpg' %}" class="custom-image" alt="My photo">
+        </div>
+        <div class="col-md-6 about-text">
+            <h2>About Me</h2>
+            <p> Driven Python developer keen on tech and
+                learning new skills. My Python skills are solid,
+                thanks to a strong grasp of OOP and using
+                methods such as Scrum and Agile. Experienced
+                with multithreading, Docker, web technologies
+                and databases, including SQL and noSQL. I've
+                made web scraping tools with Beautiful Soup
+                and Scrapy, and built web apps with Django,
+                focusing on quick progress with Agile methods.
+                Excited to contribute to a team that embraces
+                Scrum</p>
+            <p>Add more details here!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="portfolio my-5">
+    <h2 class="text-center mb-4">My Projects</h2>
+    <div class="row">
+        <!-- Project 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Project Title 1</h5>
+                    <p class="card-text">A brief description of your project.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Project Title 2</h5>
+                    <p class="card-text">A brief description of your project.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Project Title 3</h5>
+                    <p class="card-text">A brief description of your project.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'contact' %}" class="btn btn-secondary">Contact me</a>
+    </div>
+</section>
+
+<!-- Modals for Project Details -->
+<!-- Project 1 Modal -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel1">Project Title 1</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 1">
+                <p>Full description of Project 1.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">View Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 2 Modal -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel2">Project Title 2</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 2">
+                <p>Full description of Project 2.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">View Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel3">Project Title 3</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 3">
+                <p>Full description of Project 3.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">View Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
