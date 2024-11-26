@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ['your-heroku-app-name.herokuapp.com', 'localhost', '127.0.0.1:8000'] # Fill!!!!
+ALLOWED_HOSTS = ['https://grosstick-portfolio.onrender.com/', 'localhost', '127.0.0.1:8000'] # Fill!!!!
 
 
 # Application definition
