@@ -5,32 +5,42 @@
 
 {% block content %}
 <!-- Hero Section -->
-<div class="hero bg-light text-center py-5">
+<div class="hero text-center py-5">
+    <!-- TODO: Update the welcome text with your name or a personalized message -->
     <h1 class="display-4">Welcome to My Portfolio</h1>
     <p class="lead">Showcasing my best work and projects.</p>
     <a href="#projects" class="btn btn-primary btn-lg">View My Projects</a>
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down">
+        <a href="#projects">
+        <!-- Using an inline SVG icon for a modern double-chevron effect -->
+        <svg width="24" height="24" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            <path fill-rule="evenodd" d="M1.646 7.646a.5.5 0 0 1 .708 0L8 13.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+        </a>
+    </div>
+  
 </div>
 
 <!-- About Section -->
 <section class="about-section my-5">
     <div class="row">
         <div class="col-md-6">
-            <img src="{% static 'images/my_photo.jpg' %}" class="custom-image" alt="My photo">
+            <!-- TODO: Replace 'my_photo.jpg' with your actual photo and update alt text -->
+            <img src="{% static 'images/my_photo.jpg' %}" class="custom-image" alt="Your Photo">
         </div>
         <div class="col-md-6 about-text">
             <h2>About Me</h2>
-            <p> Driven Python developer keen on tech and
-                learning new skills. My Python skills are solid,
-                thanks to a strong grasp of OOP and using
-                methods such as Scrum and Agile. Experienced
-                with multithreading, Docker, web technologies
-                and databases, including SQL and noSQL. I've
-                made web scraping tools with Beautiful Soup
-                and Scrapy, and built web apps with Django,
-                focusing on quick progress with Agile methods.
-                Excited to contribute to a team that embraces
-                Scrum</p>
-            <p>Add more details here!</p>
+            <!-- TODO: Fill in your bio details, skills, experience, and any key achievements -->
+            <p>
+                Driven Python developer keen on tech and learning new skills. My Python skills are solid,
+                thanks to a strong grasp of OOP and using methods such as Scrum and Agile. Experienced
+                with multithreading, Docker, web technologies, and databases including SQL and noSQL. I've
+                created web scraping tools with Beautiful Soup and Scrapy, and built web apps with Django,
+                focusing on rapid progress with Agile methods. Excited to contribute to a team that embraces Scrum.
+            </p>
+            <p><!-- TODO: Add additional personal details or a short career highlight here --></p>
         </div>
     </div>
 </section>
@@ -42,9 +52,12 @@
         <!-- Project 1 -->
         <div class="col-md-4">
             <div class="card">
-                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 1">
+                <!-- TODO: Replace 'project_back.png' with an image representing Project 1 and update alt text -->
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 1 Image">
                 <div class="card-body text-center">
+                    <!-- TODO: Replace with your project title -->
                     <h5 class="card-title">Project Title 1</h5>
+                    <!-- TODO: Add a brief description of Project 1 -->
                     <p class="card-text">A brief description of your project.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1">
                         View Details
@@ -56,9 +69,12 @@
         <!-- Project 2 -->
         <div class="col-md-4">
             <div class="card">
-                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 2">
+                <!-- TODO: Update image and alt text for Project 2 -->
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 2 Image">
                 <div class="card-body text-center">
+                    <!-- TODO: Replace with your project title -->
                     <h5 class="card-title">Project Title 2</h5>
+                    <!-- TODO: Add a brief description of Project 2 -->
                     <p class="card-text">A brief description of your project.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal2">
                         View Details
@@ -70,9 +86,12 @@
         <!-- Project 3 -->
         <div class="col-md-4">
             <div class="card">
-                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 3">
+                <!-- TODO: Update image and alt text for Project 3 -->
+                <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 3 Image">
                 <div class="card-body text-center">
+                    <!-- TODO: Replace with your project title -->
                     <h5 class="card-title">Project Title 3</h5>
+                    <!-- TODO: Add a brief description of Project 3 -->
                     <p class="card-text">A brief description of your project.</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal3">
                         View Details
@@ -83,6 +102,7 @@
     </div>
 
     <div class="text-center mt-4">
+        <!-- TODO: Optionally, you can add a link to a dedicated projects page if available -->
         <a href="{% url 'contact' %}" class="btn btn-secondary">Contact me</a>
     </div>
 </section>
@@ -93,14 +113,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <!-- TODO: Ensure the modal title reflects the project name -->
                 <h5 class="modal-title" id="projectModalLabel1">Project Title 1</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 1">
+                <!-- TODO: Replace image and alt text with project-specific details -->
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 1 Image">
+                <!-- TODO: Provide a full description of Project 1 -->
                 <p>Full description of Project 1.</p>
             </div>
             <div class="modal-footer">
+                <!-- TODO: Update the button if you have a link or further action -->
                 <button type="button" class="btn btn-primary">View Details</button>
             </div>
         </div>
@@ -116,7 +140,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 2">
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 2 Image">
                 <p>Full description of Project 2.</p>
             </div>
             <div class="modal-footer">
@@ -135,7 +159,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 3">
+                <img src="{% static 'images/project_back.png' %}" class="img-fluid mb-3" alt="Project 3 Image">
                 <p>Full description of Project 3.</p>
             </div>
             <div class="modal-footer">

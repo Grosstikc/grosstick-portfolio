@@ -7,6 +7,7 @@
 <div class="container">
     <h1 class="mb-4">Contact Me</h1>
 
+    <!-- TODO: If needed, update the form action to your desired endpoint or email handler -->
     <form method="POST" action="">
         {% csrf_token %}
         <div class="mb-3">
@@ -39,7 +40,7 @@
         </div>
     {% endif %}
 
-    <!-- Modal -->
+    <!-- Success Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

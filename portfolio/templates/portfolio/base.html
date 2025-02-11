@@ -3,8 +3,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional portfolio of [Your Name] – Python developer and tech enthusiast.">
+    <meta name="keywords" content="Portfolio, Python, Django, Developer, Projects, [Your Name]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
     <title>{% block title %}My Portfolio{% endblock %}</title>
+
+    <!-- Favicon (Optional) -->
+    <!-- TODO: Replace with your favicon -->
+    <!-- <link rel="icon" href="{% static 'images/favicon.ico' %}"> -->
+
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,20 +24,27 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container-fluid">
+            <!-- TODO: Update the brand text/logo -->
             <a class="navbar-brand" href="{% url 'portfolio' %}">My Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}" href="{% url 'portfolio' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a></li>
-                    <!-- Uncomment if needed
-                    <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
-                    -->
-                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}" href="{% url 'portfolio' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+                    </li>
+                    <!-- Uncomment if you add a projects page -->
+                    <!-- <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li> -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,7 +58,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="footer py-4">
+        <!-- TODO: Update copyright info if needed -->
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
 

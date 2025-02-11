@@ -1,37 +1,78 @@
-/* Hero Section */
-.hero {
-  background-color: #6daffe;
-  padding: 70px 0;
-  border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
-  color: #ffffff; /* Light color for text */
-  text-align: center; /* Centers the hero title and content */
+/* Global Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.hero h1, .hero p {
-  color: #176daf; /* Ensures clear visibility */
+/* --- Typography --- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #2f2f2f;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  background-color: #fafafa;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1565c0;
   font-weight: bold;
-  font-family: 'Georgia', serif;
+  margin-bottom: 16px;
+}
+
+/* --- Hero Section --- */
+.hero {
+  /* New animated gradient background */
+  background: linear-gradient(135deg, #adc4cd, #fef8f8);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite, fadeIn 1s forwards;
+  padding: 70px 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
   text-align: center;
+  position: relative; /* Needed for the scroll indicator */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Existing fadeIn animation remains */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero h1 {
-  font-size: 2.5rem; /* Larger font for prominence */
+  font-size: 3.5rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1rem; /* Larger font for prominence */
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-/* Navbar */
+/* --- Navbar --- */
 .navbar {
-  background-color: #0056b3; /* Richer color for visibility */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for prominence */
-  padding: 10px 0;
-  border-radius: 0; /* Set to 0 for squared edges */
+  /* Using a dark theme for a sleek look */
+  background-color: #4C6369 !important;
+  transition: background-color 0.3s ease;
 }
 
-/* Full-Viewport Wrapper */
+.navbar .nav-link {
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #16222A;
+}
+
+/* --- Wrapper & Layout --- */
 html, body {
   height: 100%;
   margin: 0;
@@ -46,37 +87,38 @@ html, body {
   justify-content: space-between;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
-  background-color: #3a3f44;
+  background-color: #4C6369;
   color: #eaeaea;
   padding: 25px 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  width: 100%; /* Prevents overflow issues */
   text-align: center;
 }
 
 footer p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #e0e0e0;
-  text-align: center;
+  color: #ffffff; /* Change to your desired text color */
+  font-size: 0.95rem;
+  text-align: center; /* Ensure the paragraph is centered */
 }
 
-/* Image in About Section */
+/* --- About Section Image --- */
 .custom-image {
   width: 100%;
   max-width: 350px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-right: 40px;
-  float: left;
+  transition: transform 0.3s ease;
 }
 
+.custom-image:hover {
+  transform: scale(1.05);
+}
+
+/* --- About Text --- */
 .about-text {
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.7;
   font-size: 1.15rem;
   color: #2d2d2d;
@@ -97,77 +139,95 @@ footer p {
   }
 }
 
-/* Centered Button in Modal Pop-Ups */
-.modal .modal-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* --- Cards & Projects --- */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.modal-footer .btn, .card-body .btn-primary {
-  font-size: 1rem;
-  font-family: 'Arial', sans-serif;
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+/* --- Buttons --- */
+.btn {
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.7px;
 }
 
-/* Header Styling */
-h1, h2, h3, h4, h5, h6 {
-  color: #1565c0;
-  font-weight: bold;
-  font-family: 'Georgia', serif;
-  margin-bottom: 16px;
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-h3, h4, h5, h6 {
-  margin-bottom: 14px;
-}
-
-/* General Text Styling */
-body {
-  font-family: 'Verdana', sans-serif;
-  color: #2f2f2f;
-  line-height: 1.65;
-  font-size: 1.05rem;
-  background-color: #fafafa;
-  padding: 0;
-}
-
-p, .card-text, .lead {
-  font-size: 1.1rem;
-  color: #3a3a3a;
-  text-align: justify;
-}
-
-/* Card and Button Styling */
-.card-text {
-  font-size: 1.05rem;
-  color: #5e5e5e;
-}
-
+/* Primary Button */
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #1d3490;
+  border-color: #1d3490;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #1D2B64;
+  border-color: #1D2B64;
 }
 
+/* Secondary Button */
 .btn-secondary {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #283b87;
+  border-color: #283b87;
 }
 
 .btn-secondary:hover {
-  background-color: #004494;
-  border-color: #004494;
+  background-color: #283b87;
+  border-color: #283b87;
 }
 
-.btn {
-  font-size: 1rem;
-  font-family: 'Arial', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
+/* --- Text & Paragraphs --- */
+p, .card-text, .lead {
+  font-size: 1.1rem;
+  color: #3a3a3a;
+  text-align: center;
+}
+
+p, .about-text {
+  text-align: justify;
+}
+
+/* Scroll Down Indicator Styling */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, 5px); }
+  60% { transform: translate(-50%, 3px); }
+}
+
+.scroll-down svg {
+  fill: #ffffff;  /* Ensure contrast against the gradient */
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-down svg:hover {
+  transform: translate(-50%, -3px);
 }
