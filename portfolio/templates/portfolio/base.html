@@ -12,7 +12,7 @@
 
     <!-- Favicon (Optional) -->
     <!-- TODO: Replace with your favicon -->
-    <!-- <link rel="icon" href="{% static 'images/favicon.ico' %}"> -->
+    <link rel="icon" href="{% static 'images/logo1.png' %}">
 
     <!-- Google Fonts for Modern Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -27,7 +27,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container-fluid">
             <!-- TODO: Update the brand text/logo -->
-            <a class="navbar-brand" href="{% url 'portfolio' %}">Grosstikc</a>
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'portfolio' %}">
+                <img src="{% static 'images/logo1.png' %}" alt="Logo" class="d-inline-block align-text-top me-2" style="height: 40px; border: none;">
+                <span>Grosstikc</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

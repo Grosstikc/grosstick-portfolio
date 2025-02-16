@@ -3,38 +3,99 @@
 
 {% block title %}About Me{% endblock %}
 
+{% block extra_css %}
+<style>
+    /* Custom pastel header for selected cards */
+    .pastel-header {
+        background-color: #EDF2F4 !important; /* Soft pastel background */
+        color: #8D99AE !important;            /* Pastel text color */
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container">
-    <h1 class="mb-4">About Me</h1>
-    <p>
-        I'm Ross, a passionate Python developer dedicated to crafting elegant and efficient digital solutions. 
-        With a deep love for coding and technology, I continuously seek to learn and grow, pushing the boundaries of what's possible with Python.
-    </p>
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h1>About Me</h1>
+            <hr class="w-25 mx-auto">
+        </div>
+    </div>
+    <div class="row">
+        <!-- Who I Am & Technical Skills -->
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pastel-header">
+                    <h3 class="mb-0">Who I Am</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        I'm <strong>Rostyslav-Hryhorii Shypita</strong>, a certified Python Developer passionate about transforming intricate challenges into innovative digital solutions. My expertise spans Python programming, web development, and data science.
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pastel-header">
+                    <h3 class="mb-0">Technical Skills</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong>Python:</strong> Advanced programming, OOP, scripting, and automation.</li>
+                        <li><strong>Web Development:</strong> Django, FastAPI, REST APIs, and asynchronous programming.</li>
+                        <li><strong>Data Science:</strong> Data analysis, machine learning, deep learning, and NLP.</li>
+                        <li><strong>DevOps:</strong> Docker, CI/CD, and agile development practices.</li>
+                        <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, and Redis.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- My Journey & Certifications -->
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pastel-header">
+                    <h3 class="mb-0">My Journey</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        My adventure in technology began with a strong curiosity for problem-solving. I embraced intensive training at GoIT where I earned certifications in Python Core, Python Web Development, and Data Science on 29/08/2024. This experience enriched my technical skills and nurtured my commitment to continuous learning.
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pastel-header">
+                    <h3 class="mb-0">Certifications</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        My certifications stand as a testament to my dedication and expertise. I mastered topics from core Python programming to advanced web development and data science, empowering me to address complex challenges and innovate in every project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <h2>My Background</h2>
-    <p>
-        I began my journey in software development with a strong interest in problem-solving and innovation. 
-        My education in [Your Field] laid the foundation, and over the years, I've built a diverse portfolio that ranges from web applications to data analysis and automation.
-    </p>
+    <!-- Looking Ahead as a card -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header pastel-header">
+                    <h3 class="mb-0">Looking Ahead</h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        I am continuously exploring emerging technologies and refining my skills to stay ahead in the ever-evolving tech landscape. I look forward to collaborating with dynamic teams and contributing to projects that make a meaningful impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Me Button -->
+    <div class="text-center mt-4">
+        <a href="{% url 'contact' %}" class="btn btn-secondary">Contact me</a>
+    </div>
     
-    <h2>Key Skills</h2>
-    <ul>
-        <li><strong>Python Development:</strong> Expert in Python, with a solid grasp of object-oriented programming, asynchronous programming, and scripting.</li>
-        <li><strong>Django & Web Development:</strong> Extensive experience building robust web applications and RESTful APIs using Django.</li>
-        <li><strong>Data Analysis & Web Scraping:</strong> Proficient in using libraries such as Beautiful Soup, Scrapy, and Pandas to extract and analyze data.</li>
-        <li><strong>Containerization & DevOps:</strong> Skilled in Docker, CI/CD, and agile methodologies for rapid and reliable development cycles.</li>
-        <li><strong>Database Management:</strong> Familiar with relational databases (PostgreSQL, MySQL) as well as NoSQL solutions like MongoDB.</li>
-        <li><strong>Team Collaboration:</strong> Experienced working in agile and Scrum environments, with excellent communication and project management skills.</li>
-    </ul>
-    
-    <h2>What I Enjoy</h2>
-    <p>
-        I thrive on solving challenging problems and turning innovative ideas into reality through code. Whether I'm developing a dynamic web application or automating data extraction processes, I am always excited to tackle new challenges and collaborate with others.
-    </p>
-    
-    <h2>Looking Forward</h2>
-    <p>
-        I’m constantly exploring new technologies and methodologies to enhance my skillset and deliver even better solutions. I'm eager to contribute to projects and teams that embrace innovation and strive for excellence.
-    </p>
+
 </div>
 {% endblock %}

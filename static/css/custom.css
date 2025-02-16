@@ -15,7 +15,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  color: #1565c0;
+  color: #535366;
   font-weight: bold;
   margin-bottom: 16px;
 }
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero h1 {
-  color: #3f92f2; /* Change to white for higher contrast if your background is dark */
+  color: #212534; /* Change to white for higher contrast if your background is dark */
   font-weight: bold;
   font-family: 'Georgia', serif;
   font-size: 3.5rem; /* Increase font size */
@@ -181,24 +181,24 @@ footer p {
 
 /* Primary Button */
 .btn-primary {
-  background-color: #1d3490;
-  border-color: #1d3490;
+  background-color: #013d5a;
+  border-color: #013d5a;
 }
 
 .btn-primary:hover {
-  background-color: #1D2B64;
-  border-color: #1D2B64;
+  background-color: #005a87;
+  border-color: #005a87;
 }
 
 /* Secondary Button */
 .btn-secondary {
-  background-color: #283b87;
-  border-color: #283b87;
+  background-color: #013650;
+  border-color: #013650;
 }
 
 .btn-secondary:hover {
-  background-color: #283b87;
-  border-color: #283b87;
+  background-color: #015884;
+  border-color: #015884;
 }
 
 /* --- Text & Paragraphs --- */
