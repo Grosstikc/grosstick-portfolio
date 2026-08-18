@@ -79,6 +79,7 @@ WSGI_APPLICATION = "myportfolio.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 if DEBUG:
+    #Local development
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -86,6 +87,7 @@ if DEBUG:
         }
     }
 else:
+    #Render production
     DATABASES = {
         'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
@@ -145,10 +147,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
-EMAIL_PORT = config('EMAIL_PORT', default=587)
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Secure Cookies and SSL
 if not DEBUG:

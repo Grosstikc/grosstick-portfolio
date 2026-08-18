@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from .models import Project
 from .forms import ContactForm
@@ -20,31 +20,85 @@ def projects_view(request):
 
 def contact_view(request):
     message_sent = False
+    error_message = None
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
+
         if form.is_valid():
-            # Extract data
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            
-            # Send the email
-            send_mail(
-                f'Message from {name} ({email})',  # Subject
-                message,  # Message
-                email,  # From email
-                [settings.EMAIL_HOST_USER],  # To email
-                fail_silently=False,
-            )
-            
-            # Set the flag to true for successful submission
-            message_sent = True
-            form = ContactForm()  # Reset the form after submission
+
+            try:
+                email_message = EmailMessage(
+                    subject=f'Portfolio message from {name}',
+                    body=f'''
+Name: {name}
+Email: {email}
+
+Message:
+{message}
+''',
+                    from_email=settings.EMAIL_HOST_USER,
+                    to=[settings.EMAIL_HOST_USER],
+                    reply_to=[email],
+                )
+
+                email_message.send(fail_silently=False)
+
+                message_sent = True
+                form = ContactForm()
+
+            except Exception as error:
+                print(f'EMAIL ERROR: {error}')
+                error_message = (
+                    'Something went wrong while sending the message. '
+                    'Please try again later.'
+                )
 
     else:
         form = ContactForm()
 
-    return render(request, 'portfolio/contact.html', {'form': form, 'message_sent': message_sent})
+    return render(
+        request,
+        'portfolio/contact.html',
+        {
+            'form': form,
+            'message_sent': message_sent,
+            'error_message': error_message,
+        }
+    )
+
+###Old Version(Delete after fixing!!!)
+
+# def contact_view(request):
+#     message_sent = False
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             # Extract data
+#             name = form.cleaned_data['name']
+#             email = form.cleaned_data['email']
+#             message = form.cleaned_data['message']
+            
+#             # Send the email
+#             send_mail(
+#                 f'Message from {name} ({email})',  # Subject
+#                 message,  # Message
+#                 email,  # From email
+#                 [settings.EMAIL_HOST_USER],  # To email
+#                 fail_silently=False,
+#             )
+            
+#             # Set the flag to true for successful submission
+#             message_sent = True
+#             form = ContactForm()  # Reset the form after submission
+
+#     else:
+#         form = ContactForm()
+
+#     return render(request, 'portfolio/contact.html', {'form': form, 'message_sent': message_sent})
 
 #DEBUGGING
 # def contact_view(request):
