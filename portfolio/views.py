@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
+import resend
 from .models import Project
 from .forms import ContactForm
+
 from django.http import BadHeaderError, HttpResponse  #Debugging
+
+resend.api_key = settings.RESEND_API_KEY
+
 
 def portfolio_view(request):
     return render(request, 'portfolio/portfolio.html')
@@ -19,7 +23,6 @@ def projects_view(request):
     return render(request, 'portfolio/projects.html', {'projects': projects})
 
 def contact_view(request):
-    message_sent = False
     error_message = None
 
     if request.method == 'POST':
@@ -31,24 +34,25 @@ def contact_view(request):
             message = form.cleaned_data['message']
 
             try:
-                email_message = EmailMessage(
-                    subject=f'Portfolio message from {name}',
-                    body=f'''
-Name: {name}
-Email: {email}
+                resend.Emails.send({
+                    "from": "onboarding@resend.dev",
+                    "to": [settings.EMAIL_HOST_USER],
+                    "subject": f"Portfolio message from {name}",
+                    "html": f"""
+                        <h3>New message from your portfolio</h3>
 
-Message:
-{message}
-''',
-                    from_email=settings.EMAIL_HOST_USER,
-                    to=[settings.EMAIL_HOST_USER],
-                    reply_to=[email],
-                )
+                        <p><strong>Name:</strong> {name}</p>
 
-                email_message.send(fail_silently=False)
+                        <p><strong>Email:</strong> {email}</p>
 
-                message_sent = True
-                form = ContactForm()
+                        <hr>
+
+                        <p><strong>Message:</strong></p>
+                        <p>{message}</p>
+                    """,
+                })
+
+                return redirect('/contact/?sent=1')
 
             except Exception as error:
                 print(f'EMAIL ERROR: {error}')
@@ -59,6 +63,8 @@ Message:
 
     else:
         form = ContactForm()
+
+    message_sent = request.GET.get('sent') == '1'
 
     return render(
         request,
