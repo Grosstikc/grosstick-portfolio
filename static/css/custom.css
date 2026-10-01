@@ -22,16 +22,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Hero Section --- */
 .hero {
-  /* New animated gradient background */
-  background: linear-gradient(135deg, #adc4cd, #fef8f8);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite, fadeIn 1s forwards;
-  padding: 70px 0;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-  text-align: center;
-  position: relative; /* Needed for the scroll indicator */
+    background: linear-gradient(135deg, #3f6f91, #5f8fb3);
+    padding: 70px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    text-align: center;
+    position: relative;
 }
 
 /* Keyframes for the gradient animation */
@@ -48,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero h1 {
-  color: #212534; /* Change to white for higher contrast if your background is dark */
-  font-weight: bold;
-  font-family: 'Georgia', serif;
-  font-size: 3.5rem; /* Increase font size */
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Add a shadow for better legibility */
-  letter-spacing: 1px; /* Slightly increased letter spacing */
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
 }
 
 
@@ -129,7 +126,7 @@ footer p {
   font-size: 1.15rem;
   color: #2d2d2d;
   padding-left: 0;  /* Adjust spacing as needed */
-  margin-left: -20px; /* Reduce negative margin; try removing it entirely if needed */
+  margin-left: 0; /* Reduce negative margin; try removing it entirely if needed */
   max-width: 100%;
 }
 

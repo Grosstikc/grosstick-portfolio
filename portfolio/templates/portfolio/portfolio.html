@@ -1,6 +1,6 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-<!-- Grosstikc ????-->
+<!-- Grosstikc -->
 {% block title %}Home - My Portfolio{% endblock %}
 
 {% block content %}
@@ -31,18 +31,17 @@
         </div>
         <div class="col-md-8 about-text">
             <h2>Hi there!</h2>
-            <!-- TODO: Fill in your bio details, skills, experience, and any key achievements -->
             <p>
-                &emsp;I'm Ross, a Python developer dedicated to creating innovative, efficient, and digital solutions. 
-                With a strong foundation in Python and a keen eye for detail, I transform ideas into real-world applications.
-                In this portfolio, you'll find a curated selection of projects that not only demonstrate my technical expertise but also my creative approach to solving problems.
-                <br>&emsp;My work is characterized by a commitment to clean code, best practices, and continuous learning. 
-                I enjoy tackling challenges that push the boundaries of conventional design and technology, and I strive to deliver solutions that are both user-friendly and technically sound. 
-                Thank you for taking the time to explore my work.
-                <br>&emsp;If you'd like to collaborate, have any questions, or just want to share your thoughts, please don't hesitate to get in touch.
-                <br>&emsp;Enjoy your visit!
+                I'm Rostyslav, a Junior Python Developer focused on backend and web development.
+                I mainly work with Python and Django and enjoy building practical applications
+                while learning through real projects.
+                <br>&emsp;
+                My projects also include data analysis and a Telegram bot, which have helped me
+                explore databases, APIs, asynchronous programming, and different areas of Python development.
+                <br>&emsp;
+                This portfolio brings together some of the projects I've built while developing
+                my skills and preparing for my first professional role in software development.
             </p>
-            <p><!-- TODO: Add additional personal details or a short career highlight here --></p>
         </div>
     </div>
 </section>
@@ -57,10 +56,12 @@
                 <!-- TODO: Replace 'project_back.png' with an image representing Project 1 and update alt text -->
                 <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 1 Image">
                 <div class="card-body text-center">
-                    <!-- TODO: Replace with your project title -->
-                    <h5 class="card-title">Project Title 1</h5>
+                    <h5 class="card-title">Django Web Portfolio</h5>
                     <!-- TODO: Add a brief description of Project 1 -->
-                    <p class="card-text">A brief description of your project.</p>
+                    <p class="card-text">
+                        A personal portfolio website built with Django, Bootstrap and PostgreSQL. 
+                        Deployed online with Render.
+                    </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1">
                         View Details
                     </button>
@@ -75,9 +76,11 @@
                 <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 2 Image">
                 <div class="card-body text-center">
                     <!-- TODO: Replace with your project title -->
-                    <h5 class="card-title">Project Title 2</h5>
-                    <!-- TODO: Add a brief description of Project 2 -->
-                    <p class="card-text">A brief description of your project.</p>
+                    <h5 class="card-title">Data Science Project</h5>
+                    <p class="card-text">
+                        A Python project focused on data analysis,
+                        visualization and exploring basic machine learning techniques with real data bases.     
+                    </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal2">
                         View Details
                     </button>
@@ -91,10 +94,11 @@
                 <!-- TODO: Update image and alt text for Project 3 -->
                 <img src="{% static 'images/project_back.png' %}" class="card-img-top" alt="Project 3 Image">
                 <div class="card-body text-center">
-                    <!-- TODO: Replace with your project title -->
-                    <h5 class="card-title">Project Title 3</h5>
-                    <!-- TODO: Add a brief description of Project 3 -->
-                    <p class="card-text">A brief description of your project.</p>
+                    <h5 class="card-title">Telegram Bot</h5>
+                    <p class="card-text">
+                        A Python Telegram bot created to practice API integration, 
+                        asynchronous programming, reminders and project and task tracking.
+                    </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal3">
                         View Details
                     </button>
